@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:travel_app/pages/hot_destination.dart';
 import 'package:travel_app/utils/colors.dart';
 import 'package:travel_app/utils/model.dart';
 
@@ -20,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Container(
               height: size.height,
+              padding: EdgeInsets.only(bottom: 70),
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
@@ -99,19 +102,87 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CircleAvatar(
+                        const CircleAvatar(
                           backgroundImage: AssetImage('images/profile.png'),
                           radius: 25,
                         ),
                         SizedBox(width: 20,),
-                        
+                        SizedBox(
+                          width: size.width-110,
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Jatin Pandey",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold, fontSize: 16, color: primary_color.withOpacity(0.7)
+                                    ),
+                                  ),
+                                  const Text(
+                                    "April 7",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 11,
+                                      color: Colors.white24
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const Text(
+                                "A travel app is a mobile application designed to assist users in planning, organizing, and executing their travel activities efficiently. These apps typically offer a range of features including flight and hotel bookings, itinerary planning, navigation assistance, currency conversion, language translation, weather forecasts, and local recommendations for dining and activities.",
+                                textAlign: TextAlign.justify,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 15,
+                                  color: Colors.white30,
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
                       ],
                     ),
                   ),
                 ],
               ),
             ),
-        
+            Positioned(
+              bottom: 0,
+              child: Container(
+                width: size.width,
+                height: 85,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomRight,
+                    colors: [background_color1,background_color2]
+                  ),
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Icon(
+                      Icons.home_rounded, 
+                      size: 42,
+                      color: Colors.white38,
+                    ),
+                    Icon(
+                      Icons.place, 
+                      size: 42,
+                      color: primary_color,
+                    ),
+                    Icon(
+                      Icons.person, 
+                      size: 42,
+                      color: Colors.white38,
+                    ),
+                  ],
+                ),
+              )
+            ),
           ],
         ),
       ),
@@ -160,16 +231,23 @@ class _HomeScreenState extends State<HomeScreen> {
   
   Widget hotDestinationItems(BuildContext context, String image, String name, String noOfPlace){
     return GestureDetector(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context)=> HotDestination(image, name)));
+      },
       child: Stack(
         children: [
-          Container(
-            height: 220,
-            width: 150,
-            margin: const EdgeInsets.only(right: 20),
-            padding: const EdgeInsets.only(bottom: 20),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
+          // Hero widget all us to create a smooth and beautiful widget between two screens
+          Hero( 
+            tag: image,
+            child: Container(
+              height: 220,
+              width: 150,
+              margin: const EdgeInsets.only(right: 20),
+              padding: const EdgeInsets.only(bottom: 20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
+              ),
             ),
           ),
           //For image shadow, use Positioned
