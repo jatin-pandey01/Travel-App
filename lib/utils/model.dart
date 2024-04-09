@@ -15,6 +15,13 @@ const destination = [
 
 const hotDestination = [
   {
+    'image':'images/taj.png',
+    'name':'India',
+    'noOfPlace':'22 Tourist place',
+    "info1":"India, a culturally diverse nation in South Asia, is famed for its ancient heritage, spiritual traditions, and bustling cities like Delhi, Mumbai, and Kolkata.",
+    "info2":"From the iconic landmarks such as the Taj Mahal to the scenic beauty of Kerala's backwaters and the majestic peaks of the Himalayas, India offers a tapestry of experiences that enchant travelers from around the globe. With its rich history, vibrant festivals, and delectable cuisine, India is a land of contrasts and endless discovery."
+  },
+  {
     'image':'images/USA.png',
     'name':'America',
     'noOfPlace':'18 Tourist place',
@@ -27,13 +34,6 @@ const hotDestination = [
     'noOfPlace':'10 Tourist place',
     "info1":"Japan, an archipelago in East Asia, is a tapestry of ancient traditions and cutting-edge modernity, boasting bustling cities like Tokyo and Osaka alongside tranquil countryside and picturesque coastal regions.",
     "info2":"Renowned for its exquisite cuisine, from sushi to ramen, and its vibrant cultural festivals such as cherry blossom viewing and traditional tea ceremonies, Japan offers a captivating blend of history, innovation, and natural beauty."
-  },
-  {
-    'image':'images/taj.png',
-    'name':'India',
-    'noOfPlace':'22 Tourist place',
-    "info1":"India, a culturally diverse nation in South Asia, is famed for its ancient heritage, spiritual traditions, and bustling cities like Delhi, Mumbai, and Kolkata.",
-    "info2":"From the iconic landmarks such as the Taj Mahal to the scenic beauty of Kerala's backwaters and the majestic peaks of the Himalayas, India offers a tapestry of experiences that enchant travelers from around the globe. With its rich history, vibrant festivals, and delectable cuisine, India is a land of contrasts and endless discovery."
   },
   {
     'image':'images/England.jpeg',
