@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       itemBuilder: (context,index) {
                         return Padding(
                           padding: EdgeInsets.only(left: index == 0 ? 20 : 0),
-                          child: hotDestinationItems(context,hotDestination[index]["image"]!,hotDestination[index]["name"]!, hotDestination[index]["noOfPlace"]!),
+                          child: hotDestinationItems(context,hotDestination[index]["image"]!,hotDestination[index]["name"]!, hotDestination[index]["noOfPlace"]!, hotDestination[index]["info1"]!, hotDestination[index]["info2"]!),
                         );
                       }
                     ),
@@ -229,10 +229,10 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
   
-  Widget hotDestinationItems(BuildContext context, String image, String name, String noOfPlace){
+  Widget hotDestinationItems(BuildContext context, String image, String name, String noOfPlace,String info1, String info2){
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context)=> HotDestination(image, name)));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=> HotDestination(image, name, info1, info2)));
       },
       child: Stack(
         children: [
